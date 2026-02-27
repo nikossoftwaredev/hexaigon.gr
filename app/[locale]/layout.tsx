@@ -15,8 +15,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "App",
-  description: "",
+  title: "hexAIgon - AI-Powered Web Development & Automation",
+  description:
+    "Custom websites, AI automation, and software solutions for businesses across Greece.",
 };
 
 export const generateStaticParams = () => {
