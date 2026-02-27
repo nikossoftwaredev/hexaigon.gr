@@ -24,10 +24,21 @@ export const generateMetadata = async ({
     openGraph: {
       title: t("title"),
       description: t("description"),
+      images: [
+        {
+          url: "/seo-image.png",
+          width: 3840,
+          height: 2160,
+          alt: t("title"),
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
+      card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: ["/seo-image.png"],
     },
   };
 };
