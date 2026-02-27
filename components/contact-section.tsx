@@ -39,7 +39,7 @@ export const ContactSection = () => {
     <section id="contact" className="py-24 px-4">
       <div className="container mx-auto max-w-2xl">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <Sparkles className="h-5 w-5 text-blue-500" />
+          <Sparkles className="h-6 w-6 sm:h-5 sm:w-5 shrink-0 text-blue-500" />
           <TypographyH2>{t("title")}</TypographyH2>
         </div>
         <p className="text-center text-muted-foreground mb-12">
@@ -50,38 +50,38 @@ export const ContactSection = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-500" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-500" />
                 <Input
                   name="name"
                   placeholder={t("name")}
                   required
                   disabled={pending}
-                  className="pl-10"
+                  className="h-12 pl-12 text-base"
                 />
               </div>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-500" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-blue-500" />
                 <Input
                   name="email"
                   type="email"
                   placeholder={t("email")}
                   required
                   disabled={pending}
-                  className="pl-10"
+                  className="h-12 pl-12 text-base"
                 />
               </div>
             </div>
             <div className="relative">
-              <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-blue-500" />
+              <MessageSquare className="absolute left-4 top-4 h-5 w-5 text-blue-500" />
               <Textarea
                 name="message"
                 placeholder={t("message")}
                 required
                 disabled={pending}
-                className="min-h-32 pl-10"
+                className="min-h-32 pl-12 pt-4 text-base"
               />
             </div>
-            <Button type="submit" className="w-full gap-2" disabled={pending}>
+            <Button type="submit" size="lg" className="w-full gap-2" disabled={pending}>
               <Send className="h-4 w-4" />
               {t("submit")}
             </Button>
