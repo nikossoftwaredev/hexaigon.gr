@@ -14,7 +14,10 @@ const roboto = Roboto({
   weight: ["400", "500", "700"],
 });
 
-const SITE_URL = "https://hexaigon.gr";
+const SITE_URL =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://hexaigon.gr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -51,8 +54,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/seo-image.png",
-        width: 1200,
-        height: 630,
+        width: 3840,
+        height: 2160,
         alt: "hexAIgon — AI-Powered Web Development & Automation",
         type: "image/png",
       },
