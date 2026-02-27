@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { TypographyH2 } from "@/components/ui/typography";
+import { cn } from "@/lib/general/utils";
 
 const TECH_STACK = [
   { name: "React", color: "hover:text-cyan-400 hover:border-cyan-400/30" },
@@ -25,7 +26,10 @@ export const TechStackSection = async () => {
           {TECH_STACK.map(({ name, color }) => (
             <div
               key={name}
-              className={`px-6 py-3 rounded-full border border-white/10 text-muted-foreground text-sm font-medium transition-all duration-300 ${color}`}
+              className={cn(
+                "px-6 py-3 rounded-full border border-white/10 text-muted-foreground text-sm font-medium transition-all duration-300",
+                color
+              )}
             >
               {name}
             </div>

@@ -1,17 +1,18 @@
 "use client";
 
-import { NextIntlClientProvider, AbstractIntlMessages } from "next-intl";
 import { SessionProvider } from "next-auth/react";
+import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+
 import { Toaster } from "@/components/ui/sonner";
 
-type Props = {
+interface ProvidersProps {
   children: React.ReactNode;
   messages: AbstractIntlMessages;
   locale: string;
-};
+}
 
-export const Providers = ({ children, messages, locale }: Props) => {
+export const Providers = ({ children, messages, locale }: ProvidersProps) => {
   return (
     <SessionProvider>
       <NextThemesProvider

@@ -14,6 +14,24 @@ import { getTranslations } from "next-intl/server";
 import { SocialIcon } from "@/components/social-icon";
 import { TypographySmallReg } from "@/components/ui/typography";
 
+const SERVICE_LINKS = [
+  { key: "webDev", icon: Globe },
+  { key: "aiAutomation", icon: Bot },
+  { key: "customSoftware", icon: Code },
+] as const;
+
+const SOCIAL_LINKS = [
+  { icon: <Linkedin className="h-4 w-4" />, color: "linkedin" as const },
+  { icon: <Github className="h-4 w-4" />, color: "tiktok" as const },
+  { icon: <Instagram className="h-4 w-4" />, color: "instagram" as const },
+] as const;
+
+const LINK_CLASS =
+  "flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors";
+
+const LEGAL_LINK_CLASS =
+  "text-xs text-muted-foreground hover:text-foreground transition-colors";
+
 export const Footer = async () => {
   const t = await getTranslations("Footer");
 
@@ -34,24 +52,15 @@ export const Footer = async () => {
             </TypographySmallReg>
 
             <div className="flex gap-3 mt-4">
-              <SocialIcon
-                url="#"
-                icon={<Linkedin className="h-4 w-4" />}
-                color="linkedin"
-                isMobile
-              />
-              <SocialIcon
-                url="#"
-                icon={<Github className="h-4 w-4" />}
-                color="tiktok"
-                isMobile
-              />
-              <SocialIcon
-                url="#"
-                icon={<Instagram className="h-4 w-4" />}
-                color="instagram"
-                isMobile
-              />
+              {SOCIAL_LINKS.map(({ icon, color }) => (
+                <SocialIcon
+                  key={color}
+                  url="#"
+                  icon={icon}
+                  color={color}
+                  isMobile
+                />
+              ))}
             </div>
           </div>
 
@@ -59,27 +68,12 @@ export const Footer = async () => {
           <div>
             <p className="font-semibold mb-4">{t("services")}</p>
             <div className="space-y-3">
-              <a
-                href="#services"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Globe className="h-3.5 w-3.5" />
-                {t("webDev")}
-              </a>
-              <a
-                href="#services"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Bot className="h-3.5 w-3.5" />
-                {t("aiAutomation")}
-              </a>
-              <a
-                href="#services"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Code className="h-3.5 w-3.5" />
-                {t("customSoftware")}
-              </a>
+              {SERVICE_LINKS.map(({ key, icon: Icon }) => (
+                <a key={key} href="#services" className={LINK_CLASS}>
+                  <Icon className="h-3.5 w-3.5" />
+                  {t(key)}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -87,10 +81,7 @@ export const Footer = async () => {
           <div>
             <p className="font-semibold mb-4">{t("company")}</p>
             <div className="space-y-3">
-              <a
-                href="#contact"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
+              <a href="#contact" className={LINK_CLASS}>
                 <Mail className="h-3.5 w-3.5" />
                 {t("contact")}
               </a>
@@ -111,16 +102,10 @@ export const Footer = async () => {
             &copy; 2026 hexAIgon. {t("rights")}
           </TypographySmallReg>
           <div className="flex gap-4">
-            <a
-              href="#"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <a href="#" className={LEGAL_LINK_CLASS}>
               {t("privacy")}
             </a>
-            <a
-              href="#"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
+            <a href="#" className={LEGAL_LINK_CLASS}>
               {t("terms")}
             </a>
           </div>

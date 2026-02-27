@@ -2,6 +2,7 @@ import { Hammer, Rocket, Search } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { TypographyH2 } from "@/components/ui/typography";
+import { cn } from "@/lib/general/utils";
 
 const STEPS = [
   { key: "step1", icon: Search, number: "01", color: "text-blue-400" },
@@ -28,7 +29,7 @@ export const HowWeWorkSection = async () => {
               </div>
 
               <div className="glass p-6">
-                <Icon className={`h-8 w-8 ${color} mx-auto mb-4`} />
+                <Icon className={cn("h-8 w-8 mx-auto mb-4", color)} />
                 <h3 className="text-lg font-semibold mb-2">
                   {t(`${key}.title`)}
                 </h3>

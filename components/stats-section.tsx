@@ -4,6 +4,8 @@ import { Clock, FolderKanban, Users, Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
+import { cn } from "@/lib/general/utils";
+
 const STATS = [
   { key: "projects", value: 10, suffix: "+", icon: FolderKanban, color: "text-blue-400" },
   { key: "clients", value: 15, suffix: "+", icon: Users, color: "text-purple-400" },
@@ -61,7 +63,7 @@ export const StatsSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {STATS.map(({ key, value, suffix, icon: Icon, color }) => (
               <div key={key} className="flex flex-col items-center">
-                <Icon className={`h-6 w-6 ${color} mb-3`} />
+                <Icon className={cn("h-6 w-6 mb-3", color)} />
                 <AnimatedCounter target={value} suffix={suffix} />
                 <p className="text-sm text-muted-foreground mt-2">{t(key)}</p>
               </div>

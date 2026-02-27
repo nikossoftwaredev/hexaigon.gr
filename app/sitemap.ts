@@ -1,19 +1,26 @@
 import type { MetadataRoute } from "next";
+
 import { SUPPORTED_LOCALES } from "@/lib/i18n/routing";
 
 const BASE_URL = "https://hexaigon.gr";
 
-const sitemap = (): MetadataRoute.Sitemap => {
-  const routes = ["", "/projects"];
+const ROUTES: {
+  path: string;
+  changeFrequency: "weekly" | "monthly";
+  priority: number;
+}[] = [
+  { path: "", changeFrequency: "weekly", priority: 1.0 },
+  { path: "/projects", changeFrequency: "monthly", priority: 0.8 },
+];
 
-  return routes.flatMap((route) =>
+const sitemap = (): MetadataRoute.Sitemap =>
+  ROUTES.flatMap(({ path, changeFrequency, priority }) =>
     SUPPORTED_LOCALES.map((locale) => ({
-      url: `${BASE_URL}/${locale}${route}`,
+      url: `${BASE_URL}/${locale}${path}`,
       lastModified: new Date(),
-      changeFrequency: route === "" ? ("weekly" as const) : ("monthly" as const),
-      priority: route === "" ? 1.0 : 0.8,
+      changeFrequency,
+      priority,
     }))
   );
-};
 
 export default sitemap;
