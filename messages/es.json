@@ -1,13 +1,87 @@
 {
-  "HomePage": {
-    "title": "Bienvenido",
-    "description": "Comienza editando esta página.",
-    "components": {
-      "title": "Componentes Disponibles",
-      "button": "Botón",
-      "input": "Entrada",
-      "card": "Tarjeta",
-      "label": "Etiqueta"
+  "Metadata": {
+    "title": "hexAIgon - AI-Powered Web Development & Automation",
+    "description": "Custom websites, AI automation, and software solutions for businesses across Greece."
+  },
+  "Nav": {
+    "services": "Services",
+    "howWeWork": "How We Work",
+    "techStack": "Tech Stack",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "Hero": {
+    "line1": "We build",
+    "rotating1": "websites that work.",
+    "rotating2": "businesses that scale.",
+    "rotating3": "software that thinks.",
+    "subtitle": "AI-powered web development & automation for businesses across Greece.",
+    "cta": "Get Started",
+    "ctaSecondary": "See Our Work"
+  },
+  "Services": {
+    "title": "What We Do",
+    "webDev": {
+      "title": "Web Development",
+      "description": "Custom websites and web applications built with cutting-edge technology. Fast, responsive, and designed to convert."
+    },
+    "aiAutomation": {
+      "title": "AI Automation",
+      "description": "Automate repetitive workflows and integrate AI into your business processes. Save time, reduce errors, scale faster."
+    },
+    "customSoftware": {
+      "title": "Custom Software",
+      "description": "Tailored software solutions for your unique business needs. From internal tools to customer-facing platforms."
     }
+  },
+  "HowWeWork": {
+    "title": "How We Work",
+    "step1": {
+      "title": "Discover",
+      "description": "We learn your business, understand your goals, and identify opportunities for growth."
+    },
+    "step2": {
+      "title": "Build",
+      "description": "We design and develop your solution with modern tools and proven methodologies."
+    },
+    "step3": {
+      "title": "Launch",
+      "description": "We deploy, test, and hand over with ongoing support to ensure your success."
+    }
+  },
+  "Stats": {
+    "projects": "Projects Delivered",
+    "clients": "Clients Served",
+    "automations": "Automations Built",
+    "hoursSaved": "Hours Saved"
+  },
+  "TechStack": {
+    "title": "Powered By"
+  },
+  "Contact": {
+    "title": "Ready to automate your business?",
+    "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Tell us about your project...",
+    "submit": "Send Message",
+    "success": "Message sent! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again.",
+    "emailFallback": "Or email us at"
+  },
+  "Footer": {
+    "tagline": "AI-powered web development & automation",
+    "services": "Services",
+    "company": "Company",
+    "webDev": "Web Development",
+    "aiAutomation": "AI Automation",
+    "customSoftware": "Custom Software",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "comingSoon": "Coming Soon",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
   }
 }
