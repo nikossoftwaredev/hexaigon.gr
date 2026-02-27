@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/examples/language-switcher";
+import { Link } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/general/utils";
 
 const NAV_LINKS = ["services", "howWeWork", "techStack", "contact"] as const;
@@ -43,15 +44,15 @@ export const Navbar = () => {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <Link
+          href="/"
           className="flex items-center gap-2 cursor-pointer group"
         >
           <Hexagon className="h-5 w-5 text-blue-500 group-hover:rotate-90 transition-transform duration-500" />
           <span className="text-lg font-bold tracking-tight">
             hex<span className="text-blue-500">AI</span>gon
           </span>
-        </button>
+        </Link>
 
         {/* Center nav links */}
         <div className="hidden lg:flex items-center gap-1 bg-white/5 rounded-full px-2 py-1.5 border border-white/5">
