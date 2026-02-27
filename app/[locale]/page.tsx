@@ -27,8 +27,8 @@ export const generateMetadata = async ({
       images: [
         {
           url: "/seo-image.png",
-          width: 3840,
-          height: 2160,
+          width: 1200,
+          height: 630,
           alt: t("title"),
           type: "image/png",
         },

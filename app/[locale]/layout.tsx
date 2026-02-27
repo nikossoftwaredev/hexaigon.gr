@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/seo-image.png",
-        width: 3840,
-        height: 2160,
+        width: 1200,
+        height: 630,
         alt: "hexAIgon — AI-Powered Web Development & Automation",
         type: "image/png",
       },
