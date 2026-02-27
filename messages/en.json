@@ -55,6 +55,12 @@
     "automations": "Automations Built",
     "hoursSaved": "Hours Saved"
   },
+  "Portfolio": {
+    "title": "Our Work",
+    "viewAll": "View All Projects",
+    "visit": "Visit Site",
+    "allProjectsTitle": "All Projects"
+  },
   "TechStack": {
     "title": "Powered By"
   },

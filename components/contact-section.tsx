@@ -1,8 +1,8 @@
 "use client";
 
+import { Mail, MessageSquare, Send, Sparkles, User } from "lucide-react";
 import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Send } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -38,7 +38,10 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-4">
       <div className="container mx-auto max-w-2xl">
-        <TypographyH2 className="text-center mb-4">{t("title")}</TypographyH2>
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <Sparkles className="h-5 w-5 text-blue-500" />
+          <TypographyH2>{t("title")}</TypographyH2>
+        </div>
         <p className="text-center text-muted-foreground mb-12">
           {t("subtitle")}
         </p>
@@ -46,27 +49,38 @@ export const ContactSection = () => {
         <div className="glass p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Input
-                name="name"
-                placeholder={t("name")}
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-500" />
+                <Input
+                  name="name"
+                  placeholder={t("name")}
+                  required
+                  disabled={pending}
+                  className="pl-10"
+                />
+              </div>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-500" />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder={t("email")}
+                  required
+                  disabled={pending}
+                  className="pl-10"
+                />
+              </div>
+            </div>
+            <div className="relative">
+              <MessageSquare className="absolute left-3 top-3 h-4 w-4 text-blue-500" />
+              <Textarea
+                name="message"
+                placeholder={t("message")}
                 required
                 disabled={pending}
-              />
-              <Input
-                name="email"
-                type="email"
-                placeholder={t("email")}
-                required
-                disabled={pending}
+                className="min-h-32 pl-10"
               />
             </div>
-            <Textarea
-              name="message"
-              placeholder={t("message")}
-              required
-              disabled={pending}
-              className="min-h-32"
-            />
             <Button type="submit" className="w-full gap-2" disabled={pending}>
               <Send className="h-4 w-4" />
               {t("submit")}
@@ -77,8 +91,9 @@ export const ContactSection = () => {
             {t("emailFallback")}{" "}
             <a
               href="mailto:hello@hexaigon.gr"
-              className="text-blue-400 hover:underline"
+              className="inline-flex items-center gap-1 text-blue-400 hover:underline"
             >
+              <Mail className="h-3 w-3" />
               hello@hexaigon.gr
             </a>
           </p>

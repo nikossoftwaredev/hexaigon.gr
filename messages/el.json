@@ -55,6 +55,12 @@
     "automations": "Αυτοματισμοί",
     "hoursSaved": "Ώρες Εξοικονόμησης"
   },
+  "Portfolio": {
+    "title": "Η Δουλειά μας",
+    "viewAll": "Δείτε Όλα τα Έργα",
+    "visit": "Επίσκεψη",
+    "allProjectsTitle": "Όλα τα Έργα"
+  },
   "TechStack": {
     "title": "Χτισμένο Με"
   },

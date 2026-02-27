@@ -1,13 +1,14 @@
 "use client";
 
+import { Clock, FolderKanban, Users, Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { key: "projects", value: 10, suffix: "+" },
-  { key: "clients", value: 15, suffix: "+" },
-  { key: "automations", value: 50, suffix: "+" },
-  { key: "hoursSaved", value: 1000, suffix: "+" },
+  { key: "projects", value: 10, suffix: "+", icon: FolderKanban, color: "text-blue-400" },
+  { key: "clients", value: 15, suffix: "+", icon: Users, color: "text-purple-400" },
+  { key: "automations", value: 50, suffix: "+", icon: Zap, color: "text-amber-400" },
+  { key: "hoursSaved", value: 1000, suffix: "+", icon: Clock, color: "text-green-400" },
 ] as const;
 
 const ANIMATION_DURATION = 2000;
@@ -58,8 +59,9 @@ export const StatsSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="glass p-8 sm:p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {STATS.map(({ key, value, suffix }) => (
-              <div key={key}>
+            {STATS.map(({ key, value, suffix, icon: Icon, color }) => (
+              <div key={key} className="flex flex-col items-center">
+                <Icon className={`h-6 w-6 ${color} mb-3`} />
                 <AnimatedCounter target={value} suffix={suffix} />
                 <p className="text-sm text-muted-foreground mt-2">{t(key)}</p>
               </div>

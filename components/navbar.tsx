@@ -1,11 +1,10 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { CalendarDays, Hexagon, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/examples/language-switcher";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/general/utils";
 
 const NAV_LINKS = ["services", "howWeWork", "techStack", "contact"] as const;
@@ -36,41 +35,52 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-500",
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-white/10"
+          ? "bg-background/70 backdrop-blur-2xl border-b border-white/5 shadow-lg shadow-black/10"
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-6 lg:px-8">
+        {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-xl font-bold tracking-tight cursor-pointer"
+          className="flex items-center gap-2 cursor-pointer group"
         >
-          hex<span className="text-blue-500">AI</span>gon
+          <Hexagon className="h-5 w-5 text-blue-500 group-hover:rotate-90 transition-transform duration-500" />
+          <span className="text-lg font-bold tracking-tight">
+            hex<span className="text-blue-500">AI</span>gon
+          </span>
         </button>
 
-        <div className="hidden md:flex items-center gap-8">
+        {/* Center nav links */}
+        <div className="hidden lg:flex items-center gap-1 bg-white/5 rounded-full px-2 py-1.5 border border-white/5">
           {NAV_LINKS.map((key) => (
             <button
               key={key}
               onClick={() => scrollTo(SCROLL_IDS[key])}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer px-4 py-1.5 rounded-full hover:bg-white/5"
             >
               {t(key)}
             </button>
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        {/* Right side */}
+        <div className="hidden lg:flex items-center gap-2">
           <LanguageSwitcher />
-          <Button size="sm" onClick={() => scrollTo("contact")}>
+          <button
+            onClick={() => scrollTo("contact")}
+            className="flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-full border border-blue-500/40 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400/70 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer"
+          >
+            <CalendarDays className="h-4 w-4" />
             {t("getStarted")}
-          </Button>
+          </button>
         </div>
 
+        {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 cursor-pointer"
+          className="lg:hidden p-2.5 rounded-full hover:bg-white/5 transition-colors cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? (
@@ -81,29 +91,35 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-white/10 p-4 space-y-4">
+      {/* Mobile drawer */}
+      <div
+        className={cn(
+          "lg:hidden overflow-hidden transition-all duration-300 ease-out",
+          mobileOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        )}
+      >
+        <div className="bg-background/95 backdrop-blur-2xl border-t border-white/5 p-6 space-y-1">
           {NAV_LINKS.map((key) => (
             <button
               key={key}
               onClick={() => scrollTo(SCROLL_IDS[key])}
-              className="block w-full text-left text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+              className="block w-full text-left text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg px-4 py-3 transition-all cursor-pointer"
             >
               {t(key)}
             </button>
           ))}
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex items-center gap-3 pt-4 mt-2 border-t border-white/5">
             <LanguageSwitcher />
-            <Button
-              size="sm"
-              className="w-full"
+            <button
               onClick={() => scrollTo("contact")}
+              className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full border border-blue-500/40 text-blue-400 hover:bg-blue-500/10 transition-all cursor-pointer"
             >
+              <CalendarDays className="h-4 w-4" />
               {t("getStarted")}
-            </Button>
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { HowWeWorkSection } from "@/components/how-we-work-section";
 import { Navbar } from "@/components/navbar";
+import { PortfolioSection } from "@/components/portfolio-section";
 import { ServicesSection } from "@/components/services-section";
 import { StatsSection } from "@/components/stats-section";
 import { TechStackSection } from "@/components/tech-stack-section";
@@ -20,6 +21,7 @@ const Home = async ({ params }: BasePageProps) => {
       <main>
         <Hero />
         <ServicesSection />
+        <PortfolioSection />
         <HowWeWorkSection />
         <StatsSection />
         <TechStackSection />

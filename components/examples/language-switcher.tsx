@@ -1,6 +1,8 @@
 "use client";
 
+import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
+
 import { usePathname, useRouter } from "@/lib/i18n/navigation";
 import {
   DropdownMenu,
@@ -8,28 +10,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
 
 const languages = [
-  {
-    code: "en",
-    name: "English",
-    flag: "🇬🇧",
-  },
-  {
-    code: "el",
-    name: "Ελληνικά",
-    flag: "🇬🇷",
-  },
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "el", name: "Ελληνικά", flag: "🇬🇷" },
 ] as const;
 
 export const LanguageSwitcher = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-
-  const currentLanguage = languages.find((lang) => lang.code === locale);
 
   const handleLanguageChange = (languageCode: string) => {
     router.replace(pathname, { locale: languageCode });
@@ -38,11 +28,9 @@ export const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <span className="text-lg">{currentLanguage?.flag}</span>
-          <span className="hidden sm:inline">{currentLanguage?.name}</span>
-          <Globe className="h-4 w-4 sm:hidden" />
-        </Button>
+        <button className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all cursor-pointer">
+          <Globe className="h-4.5 w-4.5" />
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {languages.map((language) => (
