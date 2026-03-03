@@ -21,13 +21,25 @@
   },
   "Services": {
     "title": "What We Do",
-    "webDev": {
-      "title": "Web Development",
-      "description": "Custom websites and web applications built with cutting-edge technology. Fast, responsive, and designed to convert."
+    "websites": {
+      "title": "Websites",
+      "description": "Custom-built websites that load fast, look great on every device, and turn visitors into customers."
     },
-    "aiAutomation": {
-      "title": "AI Automation",
-      "description": "Automate repetitive workflows and integrate AI into your business processes. Save time, reduce errors, scale faster."
+    "webApps": {
+      "title": "Web Apps",
+      "description": "Full-stack web applications with dashboards, user auth, and real-time features tailored to your business."
+    },
+    "automations": {
+      "title": "Automations",
+      "description": "Automate repetitive workflows with AI. Connect your tools, eliminate manual tasks, and scale operations."
+    },
+    "ads": {
+      "title": "Ads",
+      "description": "Google Ads & social media campaigns that bring the right traffic. Setup, optimization, and reporting included."
+    },
+    "seoAeo": {
+      "title": "SEO & AEO",
+      "description": "Rank on Google and get cited by AI answer engines like ChatGPT. Traditional SEO meets Answer Engine Optimization."
     },
     "customSoftware": {
       "title": "Custom Software",
@@ -79,8 +91,11 @@
     "tagline": "AI-powered web development & automation",
     "services": "Services",
     "company": "Company",
-    "webDev": "Web Development",
-    "aiAutomation": "AI Automation",
+    "websites": "Websites",
+    "webApps": "Web Apps",
+    "automations": "Automations",
+    "ads": "Ads",
+    "seoAeo": "SEO & AEO",
     "customSoftware": "Custom Software",
     "about": "About",
     "contact": "Contact",

@@ -1,4 +1,5 @@
 import {
+  AppWindow,
   Bot,
   Code,
   Github,
@@ -7,7 +8,9 @@ import {
   Instagram,
   Linkedin,
   Mail,
+  Megaphone,
   Newspaper,
+  Search,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
@@ -15,8 +18,11 @@ import { SocialIcon } from "@/components/social-icon";
 import { TypographySmallReg } from "@/components/ui/typography";
 
 const SERVICE_LINKS = [
-  { key: "webDev", icon: Globe },
-  { key: "aiAutomation", icon: Bot },
+  { key: "websites", icon: Globe },
+  { key: "webApps", icon: AppWindow },
+  { key: "automations", icon: Bot },
+  { key: "ads", icon: Megaphone },
+  { key: "seoAeo", icon: Search },
   { key: "customSoftware", icon: Code },
 ] as const;
 

@@ -61,9 +61,12 @@ const Home = async ({ params }: BasePageProps) => {
       name: "Greece",
     },
     serviceType: [
-      "Web Development",
+      "Website Development",
+      "Web Application Development",
       "AI Automation",
-      "Custom Software Development",
+      "Digital Advertising",
+      "SEO",
+      "Answer Engine Optimization",
     ],
     contactPoint: {
       "@type": "ContactPoint",

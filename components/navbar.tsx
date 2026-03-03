@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 
 import { LanguageSwitcher } from "@/components/examples/language-switcher";
-import { Link } from "@/lib/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/general/utils";
 
 const NAV_LINKS = ["services", "howWeWork", "techStack", "contact"] as const;
@@ -19,13 +19,24 @@ const SCROLL_IDS: Record<string, string> = {
 
 export const Navbar = () => {
   const t = useTranslations("Nav");
+  const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const scrollTo = useCallback((id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setMobileOpen(false);
-  }, []);
+  const isHome = pathname === "/";
+
+  const navigateToSection = useCallback(
+    (id: string) => {
+      setMobileOpen(false);
+      if (isHome) {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`/#${id}`);
+      }
+    },
+    [isHome, router]
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -59,7 +70,7 @@ export const Navbar = () => {
           {NAV_LINKS.map((key) => (
             <button
               key={key}
-              onClick={() => scrollTo(SCROLL_IDS[key])}
+              onClick={() => navigateToSection(SCROLL_IDS[key])}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer px-4 py-1.5 rounded-full hover:bg-white/5"
             >
               {t(key)}
@@ -71,7 +82,7 @@ export const Navbar = () => {
         <div className="hidden lg:flex items-center gap-2">
           <LanguageSwitcher />
           <button
-            onClick={() => scrollTo("contact")}
+            onClick={() => navigateToSection("contact")}
             className="flex items-center gap-2 px-5 py-2 text-sm font-medium rounded-full border border-blue-500/40 text-blue-400 hover:bg-blue-500/10 hover:border-blue-400/70 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer"
           >
             <CalendarDays className="h-4 w-4" />
@@ -103,7 +114,7 @@ export const Navbar = () => {
           {NAV_LINKS.map((key) => (
             <button
               key={key}
-              onClick={() => scrollTo(SCROLL_IDS[key])}
+              onClick={() => navigateToSection(SCROLL_IDS[key])}
               className="block w-full text-left text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 rounded-lg px-4 py-3 transition-all cursor-pointer"
             >
               {t(key)}
@@ -112,7 +123,7 @@ export const Navbar = () => {
           <div className="flex items-center gap-3 pt-4 mt-2 border-t border-white/5">
             <LanguageSwitcher />
             <button
-              onClick={() => scrollTo("contact")}
+              onClick={() => navigateToSection("contact")}
               className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full border border-blue-500/40 text-blue-400 hover:bg-blue-500/10 transition-all cursor-pointer"
             >
               <CalendarDays className="h-4 w-4" />
