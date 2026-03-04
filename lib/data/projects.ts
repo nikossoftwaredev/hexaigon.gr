@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     description: "Website for holistic Chinese medicine therapies",
     desktopImage: "/projects/iching-balance-desktop.png",
     mobileImage: "/projects/iching-balance-mobile.png",
-    url: "https://ichingbalance.gr/",
+    url: "https://i-ching-v2.vercel.app/",
   },
   {
     slug: "salsa-rayo",
