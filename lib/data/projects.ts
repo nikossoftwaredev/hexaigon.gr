@@ -16,15 +16,7 @@ export const PROJECTS: Project[] = [
     mobileImage: "/projects/kratisix-mobile.png",
     url: "https://www.kratisix.com/en",
   },
-  {
-    slug: "query-bee",
-    title: "Query Bee",
-    description: "Tool for AI-powered data queries",
-    desktopImage: "/projects/query-bee-desktop.png",
-    mobileImage: "/projects/query-bee-mobile.png",
-    url: "http://ai.sftgroup.gr",
-  },
-  {
+{
     slug: "micro-pump",
     title: "Micro Pump",
     description: "Platform for meme coin trading",
