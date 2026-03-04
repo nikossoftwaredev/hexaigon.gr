@@ -95,4 +95,28 @@ export const PROJECTS: Project[] = [
     mobileImage: "/projects/odontiatros-kiamos-mobile.png",
     url: "https://odontiatros-giannis-kiamos.vercel.app/",
   },
+  {
+    slug: "4yournails",
+    title: "4 Your Nails",
+    description: "Website for an award-winning nail care salon",
+    desktopImage: "/projects/4yournails-desktop.png",
+    mobileImage: "/projects/4yournails-mobile.png",
+    url: "https://4yournails.vercel.app/el",
+  },
+  {
+    slug: "royal-transfer",
+    title: "Royal Transfer",
+    description: "Website for luxury airport transfers in Athens",
+    desktopImage: "/projects/royal-transfer-desktop.png",
+    mobileImage: "/projects/royal-transfer-mobile.png",
+    url: "https://royal-transfer.vercel.app/en",
+  },
+  {
+    slug: "epityxein",
+    title: "Epityxein",
+    description: "Website for a tutoring center in Ilioupoli",
+    desktopImage: "/projects/epityxein-desktop.png",
+    mobileImage: "/projects/epityxein-mobile.png",
+    url: "https://epityxein.vercel.app",
+  },
 ];
