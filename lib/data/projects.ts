@@ -17,14 +17,6 @@ export const PROJECTS: Project[] = [
     url: "https://www.kratisix.com/en",
   },
 {
-    slug: "micro-pump",
-    title: "Micro Pump",
-    description: "Platform for meme coin trading",
-    desktopImage: "/projects/micro-pump-desktop.png",
-    mobileImage: "/projects/micro-pump-mobile.png",
-    url: "https://www.micropump.fun/",
-  },
-  {
     slug: "poseidon-transfers",
     title: "Poseidon Transfers",
     description: "Website for luxury transfers in Greece",
@@ -48,14 +40,7 @@ export const PROJECTS: Project[] = [
     mobileImage: "/projects/salsa-rayo-mobile.png",
     url: "https://salsarayo.com/",
   },
-  {
-    slug: "riddle-up",
-    title: "Riddle Up",
-    description: "App for brain teaser riddles",
-    mobileImage: "/projects/riddle-up-mobile.webp",
-    url: "https://apkpure.com/riddle-up/com.NikosD.RiddleUp",
-  },
-  {
+{
     slug: "1-percent-club",
     title: "1 Percent Club",
     description: "Game for progressive difficulty trivia",
