@@ -57,6 +57,12 @@ export const Navbar = () => {
         {/* Logo */}
         <Link
           href="/"
+          onClick={(e) => {
+            if (isHome) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
           className="flex items-center gap-2 cursor-pointer group"
         >
           <Hexagon className="h-5 w-5 text-blue-500 group-hover:rotate-90 transition-transform duration-500" />

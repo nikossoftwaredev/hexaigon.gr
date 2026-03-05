@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { ContactSection } from "@/components/contact-section";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { HowWeWorkSection } from "@/components/how-we-work-section";
@@ -103,6 +104,7 @@ const Home = async ({ params }: BasePageProps) => {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 };
