@@ -14,10 +14,10 @@ export const PortfolioSection = async () => {
 
   return (
     <section id="portfolio" className="py-24 px-4">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <TypographyH2 className="text-center mb-16">{t("title")}</TypographyH2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {featured.map((project) => (
             <ProjectCard
               key={project.slug}
