@@ -5,6 +5,7 @@
   },
   "Nav": {
     "services": "Services",
+    "whyUs": "Why Us",
     "howWeWork": "How We Work",
     "techStack": "Tech Stack",
     "contact": "Contact",
@@ -44,6 +45,73 @@
     "customSoftware": {
       "title": "Custom Software",
       "description": "Tailored software solutions for your unique business needs. From internal tools to customer-facing platforms."
+    }
+  },
+  "WhyUs": {
+    "title": "Why Us",
+    "seo": {
+      "title": "Google SEO that puts you on top",
+      "description": "We build websites optimized for search engines — people find you, not your competitor."
+    },
+    "aeo": {
+      "title": "AI-ready with AEO for the new era",
+      "description": "AI assistants (ChatGPT, Perplexity, Google AI) recommend you. The SEO of the future, now."
+    },
+    "speed": {
+      "title": "Blazing fast load times",
+      "description": "Your site opens in fractions of a second — because every second of delay costs you customers."
+    },
+    "mobile": {
+      "title": "100% mobile-friendly",
+      "description": "We design mobile-first — because that's where your customers are."
+    },
+    "scalable": {
+      "title": "Easy scaling & automation",
+      "description": "A system that grows with you, without rebuilding everything from scratch."
+    },
+    "cms": {
+      "title": "CMS you can manage yourself",
+      "description": "Change text, images, and prices yourself — without waiting for the developer."
+    },
+    "ads": {
+      "title": "Ads that deliver results",
+      "description": "Google Ads, Meta, retargeting — with measurable results, not wasted money."
+    },
+    "design": {
+      "title": "Designs that impress",
+      "description": "Premium look that stands out from the competition and builds trust at first glance."
+    },
+    "ux": {
+      "title": "UX that guides the user",
+      "description": "Clear navigation, smart layout — less confusion, more sales."
+    },
+    "growth": {
+      "title": "Grow your customer base",
+      "description": "A digital tool that works for you 24/7 and brings new customers to your door."
+    },
+    "security": {
+      "title": "Security & GDPR compliance",
+      "description": "SSL, data protection, GDPR-ready. Your customer feels safe — and that builds trust."
+    },
+    "support": {
+      "title": "Post-launch support",
+      "description": "We don't disappear after launch. We're here for updates, fixes, and questions."
+    },
+    "integrations": {
+      "title": "Connect with your tools",
+      "description": "CRM, email marketing, ERP, accounting — your website fits into your business workflow."
+    },
+    "analytics": {
+      "title": "Analytics & reports",
+      "description": "Know who visits, where they come from, what they do. Decisions based on data, not instinct."
+    },
+    "copywriting": {
+      "title": "Copy that persuades & sells",
+      "description": "We write content that speaks to your customer and drives them to action."
+    },
+    "pricing": {
+      "title": "Transparent pricing, no surprises",
+      "description": "Clear packages, no hidden fees. You know from the start what you pay and what you get."
     }
   },
   "HowWeWork": {

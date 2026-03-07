@@ -8,10 +8,11 @@ import { LanguageSwitcher } from "@/components/examples/language-switcher";
 import { Link, usePathname, useRouter } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/general/utils";
 
-const NAV_LINKS = ["services", "howWeWork", "techStack", "contact"] as const;
+const NAV_LINKS = ["services", "whyUs", "howWeWork", "techStack", "contact"] as const;
 
 const SCROLL_IDS: Record<string, string> = {
   services: "services",
+  whyUs: "why-us",
   howWeWork: "how-we-work",
   techStack: "tech-stack",
   contact: "contact",

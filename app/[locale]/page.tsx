@@ -11,6 +11,7 @@ import { PortfolioSection } from "@/components/portfolio-section";
 import { ServicesSection } from "@/components/services-section";
 import { StatsSection } from "@/components/stats-section";
 import { TechStackSection } from "@/components/tech-stack-section";
+import { WhyUsSection } from "@/components/why-us-section";
 import { BasePageProps } from "@/types/page-props";
 
 export const generateMetadata = async ({
@@ -97,6 +98,7 @@ const Home = async ({ params }: BasePageProps) => {
       <main>
         <Hero />
         <ServicesSection />
+        <WhyUsSection />
         <PortfolioSection />
         <HowWeWorkSection />
         <StatsSection />
