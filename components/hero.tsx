@@ -78,7 +78,7 @@ export const Hero = () => {
           <Button
             variant="outline"
             size="lg"
-            onClick={() => scrollTo("services")}
+            onClick={() => scrollTo("portfolio")}
             className="gap-2"
           >
             {t("ctaSecondary")}
