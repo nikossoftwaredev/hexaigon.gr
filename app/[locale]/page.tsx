@@ -1,205 +1,120 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth/auth";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { ThemeSwitcher } from "@/components/examples/ThemeSwitcher";
-import { LoginButton } from "@/components/examples/login-button";
-import { LanguageSwitcher } from "@/components/examples/language-switcher";
-import { TodoList } from "@/components/examples/todo-list";
+
+import { ContactSection } from "@/components/contact-section";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { Footer } from "@/components/footer";
+import { Hero } from "@/components/hero";
+import { HowWeWorkSection } from "@/components/how-we-work-section";
+import { Navbar } from "@/components/navbar";
+import { PaymentsBanner } from "@/components/payments-banner";
+import { PortfolioSection } from "@/components/portfolio-section";
+import { ServicesSection } from "@/components/services-section";
+import { StatsSection } from "@/components/stats-section";
+import { TechStackSection } from "@/components/tech-stack-section";
+import { WhyUsSection } from "@/components/why-us-section";
 import { BasePageProps } from "@/types/page-props";
-import {
-  Shield,
-  Database,
-  Palette,
-  Languages,
-  Sparkles,
-  Github,
-  CreditCard
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+export const generateMetadata = async ({
+  params,
+}: BasePageProps): Promise<Metadata> => {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: "/seo-image.png",
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/seo-image.png"],
+    },
+  };
+};
 
 const Home = async ({ params }: BasePageProps) => {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("HomePage");
-  const session = await getServerSession(authOptions);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "hexAIgon",
+    url: "https://hexaigon.gr",
+    logo: "https://hexaigon.gr/seo-image.png",
+    description:
+      "AI-powered web development, automation, and custom software solutions for businesses across Greece.",
+    foundingDate: "2024",
+    areaServed: {
+      "@type": "Country",
+      name: "Greece",
+    },
+    serviceType: [
+      "Website Development",
+      "Web Application Development",
+      "AI Automation",
+      "Digital Advertising",
+      "SEO",
+      "Answer Engine Optimization",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "hexaigonsoftwaresolutions@gmail.com",
+      contactType: "customer service",
+      availableLanguage: ["English", "Greek"],
+    },
+    sameAs: [
+      "https://www.instagram.com/hexaigon.gr",
+      "https://www.linkedin.com/company/hexaigon",
+      "https://github.com/hexaigon",
+    ],
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "OpenAI",
+      "Anthropic",
+      "Tailwind CSS",
+      "Supabase",
+      "Stripe",
+    ],
+  };
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center justify-end px-4">
-          <div className="flex items-center gap-2">
-            <LanguageSwitcher />
-            <ThemeSwitcher />
-            <LoginButton />
-          </div>
-        </div>
-      </header>
-      <main className="flex flex-col items-center gap-8 max-w-4xl w-full mx-auto p-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Next.js Full-Stack Starter
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            Production-ready template with authentication, database, i18n, and more
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button asChild>
-              <a
-                href="https://github.com/nikossoftwaredev/next-auth-intl-prisma-starter"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gap-2"
-              >
-                <Github className="h-4 w-4" />
-                View on GitHub
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a
-                href="https://github.com/nikossoftwaredev/next-auth-intl-prisma-starter/generate"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gap-2"
-              >
-                <Sparkles className="h-4 w-4" />
-                Use Template
-              </a>
-            </Button>
-          </div>
-        </div>
-
-        {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Shield className="h-5 w-5" />
-                NextAuth.js
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Secure authentication with Google OAuth. Easy to extend with other providers.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Database className="h-5 w-5" />
-                Prisma + Supabase
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Type-safe database with Prisma ORM connected to Supabase PostgreSQL.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Languages className="h-5 w-5" />
-                next-intl
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Internationalization support with English, Greek, and Spanish locales.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Palette className="h-5 w-5" />
-                Theme Switching
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Dark and light mode support with next-themes and system preference detection.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Sparkles className="h-5 w-5" />
-                shadcn/ui
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Beautiful, accessible components built with Radix UI and Tailwind CSS.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10" />
-            <CardHeader className="relative">
-              <div className="flex items-center justify-between">
-                <CardTitle className="flex items-center gap-2">
-                  <CreditCard className="h-5 w-5" />
-                  Stripe Payments
-                </CardTitle>
-                <span className="text-xs font-medium px-2 py-1 rounded-full bg-primary/10 text-primary">
-                  Coming Soon
-                </span>
-              </div>
-            </CardHeader>
-            <CardContent className="relative">
-              <p className="text-sm text-muted-foreground">
-                Accept payments, manage subscriptions, and handle billing with Stripe integration.
-              </p>
-            </CardContent>
-          </Card>
-
-        </div>
-
-        {/* Todo Demo Section */}
-        {session?.user ? (
-          <TodoList />
-        ) : (
-          <Card className="w-full max-w-2xl">
-            <CardHeader>
-              <CardTitle>Try the Todo Demo</CardTitle>
-              <CardDescription>
-                Sign in with your Google account to see a working example of database integration.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Once you&apos;re signed in, you&apos;ll be able to:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Create and manage your personal todo list</li>
-                <li>Mark todos as complete</li>
-                <li>Edit and delete your todos</li>
-                <li>All your data is private and secure in Supabase</li>
-              </ul>
-              <div className="mt-6">
-                <LoginButton />
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Navbar />
+      <main>
+        <Hero />
+        <ServicesSection />
+        <PaymentsBanner />
+        <WhyUsSection />
+        <PortfolioSection />
+        <HowWeWorkSection />
+        <StatsSection />
+        <TechStackSection />
+        <ContactSection />
       </main>
-    </div>
+      <Footer />
+      <ScrollToTop />
+    </>
   );
 };
 

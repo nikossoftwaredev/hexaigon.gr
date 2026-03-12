@@ -1,13 +1,181 @@
 {
-  "HomePage": {
-    "title": "Welcome",
-    "description": "Get started by editing this page.",
-    "components": {
-      "title": "Available Components",
-      "button": "Button",
-      "input": "Input",
-      "card": "Card",
-      "label": "Label"
+  "Metadata": {
+    "title": "hexAIgon — AI-Powered Web Development & Automation | Greece",
+    "description": "We build custom websites, AI automation workflows, and software solutions that help Greek businesses grow faster. Next.js, React, and cutting-edge AI tools."
+  },
+  "Nav": {
+    "services": "Services",
+    "whyUs": "Why Us",
+    "howWeWork": "How We Work",
+    "techStack": "Tech Stack",
+    "ourWork": "Portfolio",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "Hero": {
+    "line1": "We build",
+    "rotating1": "websites that work.",
+    "rotating2": "businesses that scale.",
+    "rotating3": "software that thinks.",
+    "subtitle": "AI-powered web development & automation for businesses across Greece.",
+    "cta": "Get Started",
+    "ctaSecondary": "Portfolio"
+  },
+  "Services": {
+    "title": "What We Do",
+    "websites": {
+      "title": "Websites",
+      "description": "Custom-built websites that load fast, look great on every device, and turn visitors into customers."
+    },
+    "webApps": {
+      "title": "Web Apps",
+      "description": "Full-stack web applications with dashboards, user auth, and real-time features tailored to your business."
+    },
+    "automations": {
+      "title": "Automations",
+      "description": "Automate repetitive workflows with AI. Connect your tools, eliminate manual tasks, and scale operations."
+    },
+    "ads": {
+      "title": "Ads",
+      "description": "Google Ads & social media campaigns that bring the right traffic. Setup, optimization, and reporting included."
+    },
+    "seoAeo": {
+      "title": "SEO & AEO",
+      "description": "Rank on Google and get cited by AI answer engines like ChatGPT. Traditional SEO meets Answer Engine Optimization."
+    },
+    "customSoftware": {
+      "title": "Custom Software",
+      "description": "Tailored software solutions for your unique business needs. From internal tools to customer-facing platforms."
     }
+  },
+  "WhyUs": {
+    "title": "Why Us",
+    "seo": {
+      "title": "Google SEO that puts you on top",
+      "description": "We build websites optimized for search engines — people find you, not your competitor."
+    },
+    "aeo": {
+      "title": "AI-ready with AEO for the new era",
+      "description": "AI assistants (ChatGPT, Perplexity, Google AI) recommend you. The SEO of the future, now."
+    },
+    "speed": {
+      "title": "Blazing fast load times",
+      "description": "Your site opens in fractions of a second — because every second of delay costs you customers."
+    },
+    "mobile": {
+      "title": "100% mobile-friendly",
+      "description": "We design mobile-first — because that's where your customers are."
+    },
+    "scalable": {
+      "title": "Easy scaling & automation",
+      "description": "A system that grows with you, without rebuilding everything from scratch."
+    },
+    "cms": {
+      "title": "CMS you can manage yourself",
+      "description": "Change text, images, and prices yourself — without waiting for the developer."
+    },
+    "ads": {
+      "title": "Ads that deliver results",
+      "description": "Google Ads, Meta, retargeting — with measurable results, not wasted money."
+    },
+    "design": {
+      "title": "Designs that impress",
+      "description": "Premium look that stands out from the competition and builds trust at first glance."
+    },
+    "ux": {
+      "title": "UX that guides the user",
+      "description": "Clear navigation, smart layout — less confusion, more sales."
+    },
+    "growth": {
+      "title": "Grow your customer base",
+      "description": "A digital tool that works for you 24/7 and brings new customers to your door."
+    },
+    "security": {
+      "title": "Security & GDPR compliance",
+      "description": "SSL, data protection, GDPR-ready. Your customer feels safe — and that builds trust."
+    },
+    "support": {
+      "title": "Post-launch support",
+      "description": "We don't disappear after launch. We're here for updates, fixes, and questions."
+    },
+    "integrations": {
+      "title": "Connect with your tools",
+      "description": "CRM, email marketing, ERP, accounting — your website fits into your business workflow."
+    },
+    "analytics": {
+      "title": "Analytics & reports",
+      "description": "Know who visits, where they come from, what they do. Decisions based on data, not instinct."
+    },
+    "copywriting": {
+      "title": "Copy that persuades & sells",
+      "description": "We write content that speaks to your customer and drives them to action."
+    },
+    "pricing": {
+      "title": "Transparent pricing, no surprises",
+      "description": "Clear packages, no hidden fees. You know from the start what you pay and what you get."
+    }
+  },
+  "Payments": {
+    "title": "Online Payments with the Lowest Fees",
+    "description": "Accept payments via Stripe with the lowest fees in Greece. Auto-connected with AADE myDATA — invoices sent automatically, zero hassle."
+  },
+  "HowWeWork": {
+    "title": "How We Work",
+    "step1": {
+      "title": "Discover",
+      "description": "We learn your business, understand your goals, and identify opportunities for growth."
+    },
+    "step2": {
+      "title": "Build",
+      "description": "We design and develop your solution with modern tools and proven methodologies."
+    },
+    "step3": {
+      "title": "Launch",
+      "description": "We deploy, test, and hand over with ongoing support to ensure your success."
+    }
+  },
+  "Stats": {
+    "projects": "Projects Delivered",
+    "clients": "Clients Served",
+    "automations": "Automations Built",
+    "hoursSaved": "Hours Saved"
+  },
+  "Portfolio": {
+    "title": "Our Work",
+    "viewAll": "View All Projects",
+    "visit": "Visit Site",
+    "allProjectsTitle": "All Projects"
+  },
+  "TechStack": {
+    "title": "Powered By"
+  },
+  "Contact": {
+    "title": "Ready to automate your business?",
+    "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Tell us about your project...",
+    "submit": "Send Message",
+    "success": "Message sent! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again.",
+    "emailFallback": "Or email us at"
+  },
+  "Footer": {
+    "tagline": "AI-powered web development & automation",
+    "services": "Services",
+    "company": "Company",
+    "websites": "Websites",
+    "webApps": "Web Apps",
+    "automations": "Automations",
+    "ads": "Ads",
+    "seoAeo": "SEO & AEO",
+    "customSoftware": "Custom Software",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "comingSoon": "Coming Soon",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
   }
 }

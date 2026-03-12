@@ -2,10 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(pnpm tsc --noEmit)",
-      "Bash(pnpm add @aws-sdk/client-s3)"
+      "Bash(pnpm add @aws-sdk/client-s3)",
+      "WebFetch(domain:appwave.gr)",
+      "Read(//c/Users/nikos/.claude/plugins/cache/claude-plugins-official/superpowers/4.3.0/skills/subagent-driven-development/**)",
+      "Bash(git add \"app/[locale]/globals.css\" components/providers.tsx)",
+      "Bash(git commit:*)",
+      "Bash(git add messages/en.json messages/el.json messages/es.json)",
+      "Bash(npx eslint --fix components/navbar.tsx)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\nikos\\Desktop\\repos\\hexaigon.gr\\docs"
     ]
   },
- "enabledPlugins": {
+  "enabledPlugins": {
     "github@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,

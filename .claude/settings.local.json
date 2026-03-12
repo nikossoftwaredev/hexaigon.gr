@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:anthopolio-kaloudhs.vercel.app)",
+      "Bash(npx playwright screenshot --viewport-size=\"390,844\" \"https://iatriki-apokatastasi.vercel.app/\" \"public/projects/iatriki-apokatastasi-mobile.png\")",
+      "Bash(npx playwright screenshot --viewport-size=\"1920,1080\" \"https://iatriki-apokatastasi.vercel.app/\" \"public/projects/iatriki-apokatastasi-desktop.png\")"
+    ]
+  }
+}
