@@ -161,7 +161,7 @@ export default function BusinessCardPage() {
       {/* FRONT */}
       <div
         ref={frontRef}
-        className="relative overflow-hidden bg-[#0a0a0a] text-white rounded-lg shadow-2xl"
+        className="relative overflow-hidden bg-[#0a0a0a] text-white shadow-2xl"
         style={{ width: "3.5in", height: "2in" }}
       >
         {/* Subtle glow accent */}
@@ -240,7 +240,7 @@ export default function BusinessCardPage() {
       {/* BACK */}
       <div
         ref={backRef}
-        className="relative overflow-hidden bg-[#0a0a0a] text-white rounded-lg shadow-2xl"
+        className="relative overflow-hidden bg-[#0a0a0a] text-white shadow-2xl"
         style={{ width: "3.5in", height: "2in" }}
       >
         {/* Subtle glow accent */}
