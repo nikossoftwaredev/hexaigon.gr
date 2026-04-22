@@ -2,14 +2,17 @@
 
 import { useRef, useCallback } from "react";
 import { toPng } from "html-to-image";
+import { QRCodeSVG } from "qrcode.react";
 
 const SERVICES = [
   "Websites",
-  "Web Apps",
-  "AI Automations",
-  "Digital Ads",
+  "Mobile Apps",
+  "E-shops",
+  "AI Automation",
+  "Digital Marketing",
   "SEO & AEO",
   "Custom Software",
+  "Web Apps",
 ];
 
 const HexagonIcon = ({ className }: { className?: string }) => (
@@ -103,6 +106,20 @@ const MailIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const PhoneIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
+
 const download = (dataUrl: string, filename: string) => {
   const link = document.createElement("a");
   link.download = filename;
@@ -147,53 +164,70 @@ export default function BusinessCardPage() {
         className="relative overflow-hidden bg-[#0a0a0a] text-white rounded-lg shadow-2xl"
         style={{ width: "3.5in", height: "2in" }}
       >
-        {/* Subtle hex pattern watermark */}
-        <div className="absolute -right-6 -bottom-6 opacity-[0.04]">
-          <HexagonIcon className="w-40 h-40" />
-        </div>
+        {/* Subtle glow accent */}
+        <div className="absolute -left-16 -top-16 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl" />
 
-        <div className="relative h-full flex flex-col justify-between p-5">
-          {/* Logo + name */}
-          <div className="flex items-center gap-2">
-            <HexagonIcon className="w-5 h-5" />
-            <span className="text-base font-bold tracking-tight">
-              hex<span className="text-blue-500">AI</span>gon
-            </span>
+        <div className="relative h-full grid grid-cols-[1.1fr_1fr] gap-3 p-5">
+          {/* LEFT: Brand */}
+          <div className="flex flex-col justify-between border-r border-white/10 pr-3">
+            <div className="flex items-center gap-2">
+              <HexagonIcon className="w-6 h-6" />
+              <span className="text-lg font-bold tracking-tight leading-none">
+                hex<span className="text-blue-500">AI</span>gon
+              </span>
+            </div>
+
+            <div>
+              <p className="text-[8px] uppercase tracking-[0.2em] text-blue-400 font-semibold mb-1">
+                AI Solutions
+              </p>
+              <p className="text-[9px] text-neutral-400 leading-snug">
+                Web Development &amp;
+                <br />
+                Automation
+              </p>
+            </div>
           </div>
 
-          {/* Tagline */}
-          <p className="text-[9px] text-neutral-400 leading-tight max-w-[70%]">
-            AI-Powered Web Development
-            <br />& Automation Solutions
-          </p>
-
-          {/* Contact info */}
-          <div className="flex flex-col gap-1">
-            <div className="flex items-center gap-1.5">
-              <MailIcon className="w-2.5 h-2.5 text-blue-400" />
-              <span className="text-[8px] text-neutral-300">
+          {/* RIGHT: Contact */}
+          <div className="flex flex-col justify-center gap-2">
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
+                <PhoneIcon className="w-2.5 h-2.5 text-blue-400" />
+              </div>
+              <span className="text-[8.5px] text-neutral-200 font-medium">
+                +30 698 388 2720
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
+                <MailIcon className="w-2.5 h-2.5 text-blue-400" />
+              </div>
+              <span className="text-[7.5px] text-neutral-200 break-all leading-tight">
                 hexaigonsoftwaresolutions@gmail.com
               </span>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
                 <GlobeIcon className="w-2.5 h-2.5 text-blue-400" />
-                <span className="text-[8px] text-neutral-300">
-                  hexaigon.gr
-                </span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <span className="text-[8.5px] text-neutral-200">
+                hexaigon.gr
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
                 <InstagramIcon className="w-2.5 h-2.5 text-blue-400" />
-                <span className="text-[8px] text-neutral-300">
-                  @hexaigon.gr
-                </span>
               </div>
+              <span className="text-[8.5px] text-neutral-200">
+                @hexaigon.gr
+              </span>
             </div>
           </div>
         </div>
 
         {/* Blue accent line at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-blue-700" />
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-blue-500 via-blue-400 to-blue-700" />
       </div>
 
       <button
@@ -209,24 +243,31 @@ export default function BusinessCardPage() {
         className="relative overflow-hidden bg-[#0a0a0a] text-white rounded-lg shadow-2xl"
         style={{ width: "3.5in", height: "2in" }}
       >
-        {/* Large watermark hex */}
-        <div className="absolute -left-10 -top-10 opacity-[0.04]">
-          <HexagonIconBack className="w-44 h-44" />
-        </div>
+        {/* Subtle glow accent */}
+        <div className="absolute -right-16 -bottom-16 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl" />
 
-        <div className="relative h-full flex flex-col justify-between p-5">
-          {/* Header */}
-          <div>
-            <p className="text-[9px] font-semibold text-blue-400 uppercase tracking-[0.2em] mb-3">
+        <div className="relative h-full grid grid-cols-[1fr_auto] gap-3 p-5">
+          {/* LEFT: brand + services */}
+          <div className="flex flex-col min-w-0">
+            {/* Brand */}
+            <div className="flex items-center gap-2 mb-2">
+              <HexagonIconBack className="w-4 h-4" />
+              <span className="text-sm font-bold tracking-tight">
+                hex<span className="text-blue-500">AI</span>gon
+              </span>
+            </div>
+
+            {/* Label */}
+            <p className="text-[7.5px] font-semibold text-blue-400 uppercase tracking-[0.25em] mb-1.5">
               What We Build
             </p>
 
             {/* Services grid */}
-            <div className="grid grid-cols-2 gap-x-6 gap-y-1.5">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 flex-1">
               {SERVICES.map((service) => (
                 <div key={service} className="flex items-center gap-1.5">
                   <div className="w-1 h-1 rounded-full bg-blue-500 shrink-0" />
-                  <span className="text-[8.5px] text-neutral-300">
+                  <span className="text-[8px] text-neutral-200 truncate">
                     {service}
                   </span>
                 </div>
@@ -234,20 +275,26 @@ export default function BusinessCardPage() {
             </div>
           </div>
 
-          {/* Bottom brand */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <HexagonIconBack className="w-3.5 h-3.5" />
-              <span className="text-[8px] font-semibold text-neutral-500">
-                hex<span className="text-blue-500/60">AI</span>gon
-              </span>
+          {/* RIGHT: QR code */}
+          <div className="flex flex-col items-center justify-center gap-1">
+            <div className="bg-white p-1.5 rounded-md">
+              <QRCodeSVG
+                value="https://hexaigon.gr"
+                size={76}
+                level="H"
+                marginSize={0}
+                fgColor="#0a0a0a"
+                bgColor="#ffffff"
+              />
             </div>
-            <span className="text-[7px] text-neutral-600">hexaigon.gr</span>
+            <span className="text-[7px] text-neutral-400 uppercase tracking-[0.15em]">
+              Scan Me
+            </span>
           </div>
         </div>
 
-        {/* Blue accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-700 to-blue-500" />
+        {/* Blue accent line at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-blue-700 via-blue-400 to-blue-500" />
       </div>
 
       <button

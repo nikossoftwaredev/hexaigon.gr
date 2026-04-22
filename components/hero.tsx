@@ -6,9 +6,6 @@ import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
-const SPLINE_EMBED_URL =
-  "https://my.spline.design/nexbotrobotcharacterconcept-1ge7skHgxJO0mPtoxGf8f1Vs/";
-
 const ROTATION_KEYS = ["rotating1", "rotating2", "rotating3"] as const;
 const TYPING_SPEED = 80;
 const DELETE_SPEED = 40;
@@ -54,16 +51,14 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Spline 3D background */}
-      <iframe
-        src={SPLINE_EMBED_URL}
-        className="absolute inset-0 z-0 w-full h-full border-0"
-        loading="lazy"
-        title="3D Robot Background"
-      />
+      {/* Grid background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[64px_64px]" />
+
+      {/* Radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-500/10 rounded-full blur-[120px]" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pointer-events-none">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
           {t("line1")}{" "}
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent">

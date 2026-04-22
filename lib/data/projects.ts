@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     description: "Website for a flower shop and garden services",
     desktopImage: "/projects/anthopolio-kaloudhs-desktop.png",
     mobileImage: "/projects/anthopolio-kaloudhs-mobile.png",
-    url: "https://anthopolio-kaloudhs.vercel.app",
+    url: "https://www.anthopoleio-kaloudis.gr/en",
   },
   {
     slug: "iching-balance",
